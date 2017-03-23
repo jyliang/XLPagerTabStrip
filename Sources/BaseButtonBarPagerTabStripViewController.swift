@@ -65,6 +65,7 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType : UICollec
             newContainerViewFrame.origin.y = buttonBarHeight
             newContainerViewFrame.size.height = containerView.frame.size.height - (buttonBarHeight - containerView.frame.origin.y)
             containerView.frame = newContainerViewFrame
+            view.addSubview(containerView) //For some reason the reference is lost immediately out out the scope?
             return buttonBar
         }()
         if buttonBarView.superview == nil {
